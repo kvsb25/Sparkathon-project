@@ -1,13 +1,13 @@
 const scannerContainer = document.getElementById('scannerContainer');
-const scanBtn = document.querySelector("#scanBtn");
-const stopBtn = document.querySelector("#stopBtn");
-if(scanBtn.innerHTML == "Scan"){
-    scanBtn.onclick = function(){load_quagga(); toggleScanBtn()};
+const btn = document.querySelector("#scanBtn");
+
+function scanInit(){
+    toggleScanBtn();
+    load_quagga();
 }
 
 function load_quagga() {
     scannerContainer.style.display = "inline";
-    // toggleScanBtn();
 
 
     if (document.querySelector('#camera') && navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
@@ -44,16 +44,15 @@ function closeScanner() {
 }
 
 function toggleScanBtn(){
-    const scanBtn = document.querySelector("#scanBtn");
-    if(scanBtn.textContent == "Scan"){
-        scanBtn.textContent = "Stop scan";
-        scanBtn.removeEventListener('click', load_quagga);
-        scanBtn.addEventListener('click', closeScanner);
+    const btn = document.querySelector("#scanBtn");
+    if(btn.textContent == "Scan"){
+        btn.textContent = "Stop scan";
+        btn.onclick = closeScanner;
     } else {
-        scanBtn.textContent = "Scan";
-        scanBtn.removeEventListener('click', closeScanner);
-        scanBtn.addEventListener('click', load_quagga);
+        btn.textContent = "Scan";
+        btn.onclick = scanInit;
     }
+    console.log(btn.onclick);
 }
 
 /******** Event Handlers ********/
