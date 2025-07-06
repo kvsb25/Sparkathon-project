@@ -53,7 +53,7 @@
         .message>div{
             border: 2px solid gray;
             border-radius: 1rem;
-            min-height: 60%;
+            min-height: 40%;
             max-height: 80%;
             min-width: 30%;
             max-width: 60%;
@@ -61,7 +61,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow-y: auto;
+            overflow: hidden;
+            padding: 10px;
         }
 
         .bot-message {
@@ -146,7 +147,7 @@
             
             <div class="message-box">
                 <div class="input-area">
-                    <textarea placeholder="Ask anything about the product" id="message"></textarea>
+                    <textarea placeholder="Ask anything about the product" class="textareaMessage" id="message"></textarea>
                     <div class="interactives">
                         <button id="sendBtn">Send</button>
                         <button id="scanBtn" onclick="scanInit()">Scan</button>

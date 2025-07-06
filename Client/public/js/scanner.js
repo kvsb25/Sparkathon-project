@@ -29,7 +29,6 @@ function load_quagga() {
         });
 
         Quagga.onDetected(function (data) {
-            // document.querySelector('#result').textContent = data.codeResult.code;
             closeScanner();
             console.log(data);
         });
