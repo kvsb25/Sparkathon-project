@@ -1,0 +1,32 @@
+.test{
+    height: 250px;
+    width: 250px;
+    background-color: brown;
+}
+.container{
+    height: 800px;
+    width: 300px;
+    display:flex;
+    flex-direction: column;
+}
+
+#reader{
+    width: 250px;
+}
+
+.videoContainer{
+    width: 250px;
+    margin: 20px;
+}
+
+#video{
+    height: 100%;
+    width: 100%;
+}
+
+#imageContainer{
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: row; 
+}
